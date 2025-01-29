@@ -1,0 +1,128 @@
+/* 基本のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 20px;
+}
+
+h1 {
+    color: #2d3a59;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* フォーム */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1.2em;
+    color: #2d3a59;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input, button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* 結果の表示 */
+.result {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.result-table-container {
+    overflow-x: auto; /* 横スクロールを有効にする */
+    max-width: 100%;
+}
+
+.result-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    table-layout: fixed; /* 固定幅にしてテーブルが広がりすぎないように */
+}
+
+.result-table th, .result-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.result-table th {
+    background-color: #f1f1f1;
+    font-size: 1.1em;
+}
+
+.result-table td {
+    background-color: #fff;
+    font-size: 1.1em;
+}
+
+.result-table th, .result-table td {
+    width: 80px; /* 全ての列に対して幅を80pxに設定 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 特定の列に幅を固定 */
+.result-table th:first-child, .result-table td:first-child {
+    width: 80px; /* 例: 最初の列を80pxに固定 */
+}
+
+.result-table th:last-child, .result-table td:last-child {
+    width: 120px; /* 例: 最後の列（合計額）を120pxに固定 */
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    input, button {
+        font-size: 1.2em;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    /* テーブルの幅を制限し、スクロール可能にする */
+    .result-table-container {
+        width: auto;
+        max-width: 100%;
+        /* overflow-x: auto; 横スクロールを有効にする */
+    }
+}
