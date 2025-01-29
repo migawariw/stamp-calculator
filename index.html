@@ -8,17 +8,17 @@
 </head>
 <body>
 
-    <h1>切手の枚数の組み合わせ計算</h1>
+    <h1>切手組み合わせ計算機</h1>
     
     <form id="inputForm">
-        <label for="target">目標金額:</label>
-        <input type="number" id="target" name="target" required><br>
+        <label for="target">作りたい金額[円]:</label>
+        <input type="number" id="target" name="target" placeholder="例: 125"><br>
 
-        <label for="coefficients">係数 [カンマまたはピリオド区切り]:</label>
-        <input type="text" id="coefficients" name="coefficients" required><br>
+        <label for="coefficients">切手の種類 [円][カンマまたはピリオド区切り]:</label>
+        <input type="text" id="coefficients" name="coefficients" placeholder="例: 2,10,62,63"><br>
 
-        <label for="maxValues">最大枚数[カンマまたはピリオド区切り]:</label>
-        <input type="text" id="maxValues" name="maxValues" required><br>
+        <label for="maxValues">最大枚数[枚][カンマまたはピリオド区切り]:</label>
+        <input type="text" id="maxValues" name="maxValues" placeholder="例: 2,2,7,8"><br>
 
         <button type="submit">計算する</button>
     </form>
@@ -26,6 +26,53 @@
     <div id="result" class="result"></div>
 
     <script src="script.js"></script>
+
+	<div class="container">
+        <!-- <h1>切手組み合わせ計算機</h1> -->
+        
+        <div class="instruction">
+            <h2>このサイトの使い方</h2>
+            <p>このサイトでは、あなたが指定した切手の値段と枚数を使って、目標金額を達成するための「切手の組み合わせ」を計算します。例えば、2円、10円、62円、63円の切手を使って150円を作りたい場合、そのために必要な枚数を自動的に計算します。</p>
+            
+            <h3>使い方のステップ</h3>
+            <ol>
+				<li><strong>作りたい金額を入力</strong><br>
+                    目標金額を入力します。例えば125円など。</li>
+                <li><strong>切手の種類を入力</strong><br>
+                    使用する切手の種類をカンマ区切りで入力します。<br>
+                    例: `2,10,62,63`
+                </li>
+                <li><strong>各切手の最大枚数を入力</strong><br>
+                    各切手に対する最大枚数をカンマ区切りで入力します。「切手の種類」と順番を必ず揃えてください。<br>
+                    例: `2,1,3,8`
+					2円切手が2枚、10円切手が1枚、62円切手が3枚、63円切手が8枚あることを表す。
+                </li>
+                <li><strong>計算ボタンを押す</strong><br>
+                    入力が完了したら「計算」ボタンを押してください。</li>
+            </ol>
+            
+            <h3>具体例</h3>
+            <p>例えば、次のような入力をしたとします：</p>
+            <ul>
+				<li><strong>作りたい金額</strong>: 125円</li>
+                <li><strong>切手の種類</strong>: 2円、10円、62円、63円</li>
+                <li><strong>最大枚数</strong>: 2枚、1枚、3枚、8枚</li>
+            </ul>
+            <p>入力形式は次のようになります：</p>
+            <pre>切手の値段: 2,10,62,63</pre>
+            <pre>最大枚数: 2,1,3,8</pre>
+            <p>「計算」を押すと、次のような結果が表示されます（例）:</p>
+            <pre>
+切手の値段   |  2円   10円   62円   63円
+枚数         |   0     0      1      1
+合計額       |  125円
+            </pre>
+
+			候補が複数ある場合は複数表示されます。
+			候補がない場合は「条件を満たす組み合わせが見つかりませんでした。」と表示されます。
+        </div>
+
+    </div>
 
 </body>
 </html>
