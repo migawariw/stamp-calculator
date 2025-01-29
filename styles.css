@@ -52,67 +52,36 @@ button:hover {
     background-color: #218838;
 }
 
+
+
 /* 結果の表示 */
 .result {
     margin-top: 30px;
-    text-align: center;
 }
 
 .result-table-container {
     overflow-x: auto; /* 横スクロールを有効にする */
-    max-width: 100%;
 }
 
 .result-table {
-    width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
-    table-layout: fixed; /* 固定幅にしてテーブルが広がりすぎないように */
+    table-layout: fixed;
 }
 
 .result-table th, .result-table td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
+    font-size: 1.1em;
 }
 
 .result-table th {
     background-color: #f1f1f1;
-    font-size: 1.1em;
 }
 
 .result-table td {
     background-color: #fff;
-    font-size: 1.1em;
-}
-
-.result-table th, .result-table td {
-    width: auto; /* 列の幅を自動調整 */
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-/* スマホ対応 */
-@media (max-width: 600px) {
-    input, button {
-        font-size: 1.2em;
-    }
-
-    label {
-        font-size: 1em;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    /* テーブルの幅を制限し、スクロール可能にする */
-    .result-table-container {
-        width: auto;
-        max-width: 100%;
-        overflow-x: auto; /* 横スクロールを有効にする */
-    }
 }
 
 
@@ -134,8 +103,29 @@ input, button {
     font-size: 1.2em; /* 入力欄とボタンの文字サイズ */
 }
 
-/* テーブル内の文字サイズを大きく */
+#output {
+    font-size: 2em; /* フォントサイズを大きく */
+    margin-top: 20px;
+    text-align: center;
+    background-color: #eef;
+    padding: 15px;
+    border-radius: 8px;
+}
+/* スマホ対応 */
+@media (max-width: 600px) {
+    input, button {
+        font-size: 1.2em;
+    }
 
+    label {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+}
 
 /* スマホ対応 */
 @media (max-width: 600px) {
@@ -157,3 +147,4 @@ input, button {
 		width: 80%;
 	}
 }
+
