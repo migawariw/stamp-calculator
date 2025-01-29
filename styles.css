@@ -1,10 +1,4 @@
-/* 基本のリセット */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 基本的なスタイル */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f7fc;
@@ -24,8 +18,10 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+	width: 1000px;
+    max-width: 90%;
     margin: 0 auto;
+	text-align: center;
 }
 
 label {
@@ -36,7 +32,8 @@ label {
 }
 
 input, button {
-    width: 100%;
+    width: 800px;
+	max-width: 80%;
     padding: 15px;
     font-size: 1.1em;
     margin: 8px 0;
@@ -90,19 +87,10 @@ button:hover {
 }
 
 .result-table th, .result-table td {
-    width: 80px; /* 全ての列に対して幅を80pxに設定 */
+    width: auto; /* 列の幅を自動調整 */
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
-}
-
-/* 特定の列に幅を固定 */
-.result-table th:first-child, .result-table td:first-child {
-    width: 80px; /* 例: 最初の列を80pxに固定 */
-}
-
-.result-table th:last-child, .result-table td:last-child {
-    width: 120px; /* 例: 最後の列（合計額）を120pxに固定 */
 }
 
 /* スマホ対応 */
@@ -123,6 +111,49 @@ button:hover {
     .result-table-container {
         width: auto;
         max-width: 100%;
-        /* overflow-x: auto; 横スクロールを有効にする */
+        overflow-x: auto; /* 横スクロールを有効にする */
     }
+}
+
+
+/* 全体の文字サイズを大きく */
+
+
+/* h1の文字サイズを大きく */
+h1 {
+    font-size: 2em; /* タイトルの文字サイズ */
+}
+
+/* ラベルの文字サイズを大きく */
+label {
+    font-size: 1.3em; /* ラベルの文字サイズ */
+}
+
+/* 入力欄とボタンの文字サイズを大きく */
+input, button {
+    font-size: 1.2em; /* 入力欄とボタンの文字サイズ */
+}
+
+/* テーブル内の文字サイズを大きく */
+
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    input, button {
+        font-size: 1.3em; /* モバイル用の入力欄とボタンの文字サイズ */
+    }
+
+    label {
+        font-size: 1.1em; /* モバイル用のラベルの文字サイズ */
+    }
+
+    h1 {
+        font-size: 1.8em; /* モバイル用のタイトルの文字サイズ */
+    }
+	form {
+		width: auto;
+	}
+	input, button {
+		width: 80%;
+	}
 }
