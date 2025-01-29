@@ -45,7 +45,7 @@ document.getElementById('inputForm').addEventListener('submit', function(event) 
 			// 1行目: 切手の値段
 			resultHTML += '<tr>';
 			coefficients.forEach(coeff => {
-					resultHTML += `<th>${coeff}円</th>`;
+					resultHTML += `<th>${coeff}</th>`;
 			});
 			resultHTML += '<th>合計額</th>';
 			resultHTML += '</tr>';
